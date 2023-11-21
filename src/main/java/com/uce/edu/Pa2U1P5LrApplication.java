@@ -20,6 +20,10 @@ public class Pa2U1P5LrApplication implements CommandLineRunner {
 	private IMateriaService iMateriaService;
 	@Autowired
 	private Materia materia;
+	@Autowired
+	private Materia materia1;
+	@Autowired
+	private Materia materia2;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U1P5LrApplication.class, args);
@@ -29,32 +33,18 @@ public class Pa2U1P5LrApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		this.materia.setCodigo("M1");
-		this.materia.setNombre("P. Avanzada");
-		this.materia.setNumeroCreditos(10);
-
-		this.iMateriaService.registrar(materia);
-
-		System.out.println("Reporte inicio");
-
-		List<Materia> reporteList = this.iMateriaService.buscarTodos();
-		for (Materia mat : reporteList) {
-			System.out.println(mat);
-		}
-
-		Materia mate = this.iMateriaService.buscar("M1");
-		System.out.println(mate);
-
-		mate.setNumeroCreditos(20);
-
-		this.iMateriaService.actualizar(mate);
-		Materia mate2 = this.iMateriaService.buscar("M1");
-		System.out.println(mate2);
-
-		this.iMateriaService.eliminar("M1");
-
-		mate2 = this.iMateriaService.buscar("M1");
-		System.out.println(mate2);
+		this.materia.setNombre("Avanzada II");
+		System.out.println(this.materia);
+		System.out.println(this.materia1);
+		
+		this.materia1.setNombre("Nuevo Nombre");
+		System.out.println(this.materia1);
+		System.out.println(this.materia);
+		
+		this.materia2.setNombre("Nombre Final");
+		System.out.println(materia2);
+		System.out.println(materia1);
+		System.out.println(materia);
 
 	}
 
