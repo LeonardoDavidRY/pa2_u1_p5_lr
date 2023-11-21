@@ -8,6 +8,10 @@ public class Pa2U1P5LrApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U1P5LrApplication.class, args);
+		System.out.println("Hola Mundo");
+		System.out.println("Soy Leonardo Ramirez");
+		System.err.println("Cambio en la misma Rama");
+		System.out.println("Cambio en una nueva rama taller 3");
 	}
 
 }
