@@ -3,8 +3,10 @@ package com.uce.edu.tranferencia.repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.uce.edu.tranferencia.repository.modelo.Transferencia;
+import org.springframework.stereotype.Repository;
 
+import com.uce.edu.tranferencia.repository.modelo.Transferencia;
+@Repository
 public class TransferenciaRepositoryImpl implements ITransferenciaRepository {
 
 	private static List<Transferencia> base= new ArrayList();

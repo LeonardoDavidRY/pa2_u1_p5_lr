@@ -27,5 +27,11 @@ public class CuentaBancaria {
 	public void setCedulaPropietario(String cedulaPropietario) {
 		this.cedulaPropietario = cedulaPropietario;
 	}
+	@Override
+	public String toString() {
+		return "CuentaBancaria [numero=" + numero + ", cedulaPropietario=" + cedulaPropietario + ", saldo=" + saldo
+				+ "]";
+	}
+	
 
 }
