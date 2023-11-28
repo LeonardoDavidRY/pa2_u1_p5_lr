@@ -17,6 +17,8 @@ public class TransferenciaServiceImpl implements ITransferenciaService {
 	private ITransferenciaRepository iTransferenciaRepository;
 	@Autowired
 	private ICuentaBancariaRepository bancariaRepository;
+	@Autowired
+	private INumeracionService iNumeracionService; 
 	
 
 	@Override
@@ -73,12 +75,14 @@ public class TransferenciaServiceImpl implements ITransferenciaService {
 			ctaDestino.setSaldo(nuevoSaldoDestino);
 			this.bancariaRepository.actualizar(ctaDestino);
 			// 10. Crear la transferencia
+			String num = this.iNumeracionService.establecerContador();
 			Transferencia transferencia = new Transferencia();
 			transferencia.setCuentaOrigen(ctaOrigen);
 			transferencia.setCuentaDestino(ctaDestino);
 			transferencia.setFecha(LocalDateTime.now());
 			transferencia.setMonto(monto);
-			transferencia.setNumero("123456789");
+			//transferencia.setNumero("123456789");
+			transferencia.setNumero(num);
 
 			this.iTransferenciaRepository.insertar(transferencia);
 			System.out.println("¡Tranferencia realizada con exito!");
