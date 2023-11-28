@@ -8,6 +8,7 @@ import com.uce.edu.ioc.di.Estudiante;
 import com.uce.edu.repository.modelo.Materia;
 import com.uce.edu.service.IMateriaService;
 import com.uce.edu.tranferencia.repository.modelo.CuentaBancaria;
+import com.uce.edu.tranferencia.repository.modelo.Transferencia;
 import com.uce.edu.transferencia.service.ICuentaBancariaService;
 import com.uce.edu.transferencia.service.ITransferenciaService;
 
@@ -49,15 +50,29 @@ public class Pa2U1P5LrApplication implements CommandLineRunner {
 
 				this.iTransferenciaService.realizar("1234","5678", new BigDecimal(20));
 
-				//System.out.println(ctaOrigen);
-				//System.out.println(ctaDestino);
-
+				System.out.println(ctaOrigen);
+				System.out.println(ctaDestino);
 
 				CuentaBancaria ctaOrigen1 = this.iCuentaBancariaService.buscar("1234");
 				System.out.println(ctaOrigen1);
 				CuentaBancaria ctaDestino1 = this.iCuentaBancariaService.buscar("5678");
 				System.out.println(ctaDestino1);
-		
+
+				this.iTransferenciaService.realizar("1234","5678", new BigDecimal(50));
+				this.iTransferenciaService.realizar("5678","1234", new BigDecimal(10));
+
+				//Contruir un reporte del estado de cuenta de todas las tranferencias}
+				System.out.println("Reporte de Transferencias");
+				int indice = 0;
+				List<Transferencia> lista = this.iTransferenciaService.visulizarTodoList();
+				for(Transferencia trans: lista) {
+					indice++;
+					System.out.println("Transferencia numero: "+indice+": "+trans.toString());
+				}
+				System.out.println("Gracias por utilizar nuestro servicio");
+
+				System.out.println("Comprovacion del deposito con el 10%");
+				//pendiente 
 
 	}
 
