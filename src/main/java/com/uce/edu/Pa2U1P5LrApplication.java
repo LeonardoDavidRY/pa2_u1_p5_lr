@@ -20,9 +20,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 @SpringBootApplication
 
 public class Pa2U1P5LrApplication implements CommandLineRunner {
-
+	
+    //DI por atributo
 	@Autowired
 	private ITransferenciaService iTransferenciaService;
+	/*
+	 * DI por constructor
+	@Autowired
+	public Pa2U1P5LrApplication(ITransferenciaService iTransServi) {
+		this.iTransferenciaService = iTransServi;
+	}
+	*/
+	//DI por metodo (set)
+	/*
+	@Autowired
+	public void setiTransferenciaService(ITransferenciaService iTransferenciaService) {
+		this.iTransferenciaService = iTransferenciaService;
+	}
+	*/
+
 	@Autowired
 	private ICuentaBancariaService iCuentaBancariaService;
 
