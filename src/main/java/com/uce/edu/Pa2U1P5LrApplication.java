@@ -51,6 +51,7 @@ public class Pa2U1P5LrApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
+		//prueba
 		// 1. Crear las cuentas
 				CuentaBancaria ctaOrigen = new CuentaBancaria();
 				ctaOrigen.setCedulaPropietario("1751674027");

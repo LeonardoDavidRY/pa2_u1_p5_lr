@@ -8,5 +8,6 @@ public interface IBodegaRepository {
 	public void insertar(Bodega bodega);
 	public void actualizar(Bodega bodega);
 	public void eliminar(String codigo);
+	
 
 }
